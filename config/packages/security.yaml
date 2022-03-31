@@ -38,7 +38,8 @@ security:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/profile, roles: ROLE_USER }
         - { path: /bonbon/new, roles: ROLE_ADMIN }
-        - { path: bonbon/\d/edit, roles: ROLE_ADMIN }
+        - { path: /bonbon/\d/edit, roles: ROLE_ADMIN }
+        - { path: /user, roles: ROLE_ADMIN }
 
 when@test:
     security:
