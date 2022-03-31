@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bonbon index{% endblock %}
+
+{% block body %}
+    <h1>Bonbon index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bonbon in bonbons %}
+            <tr>
+                <td>{{ bonbon.id }}</td>
+                <td>{{ bonbon.titre }}</td>
+                <td>{{ bonbon.description }}</td>
+                <td>
+                    <a href="{{ path('app_bonbon_show', {'id': bonbon.id}) }}">show</a>
+                    <a href="{{ path('app_bonbon_edit', {'id': bonbon.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_bonbon_new') }}">Create new</a>
+{% endblock %}
